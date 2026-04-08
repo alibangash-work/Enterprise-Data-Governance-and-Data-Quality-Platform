@@ -1,0 +1,54 @@
+{
+  "dashboard": {
+    "title": "Data Governance Platform",
+    "tags": ["data-governance", "platform"],
+    "timezone": "browser",
+    "panels": [
+      {
+        "title": "Pipeline Execution Status",
+        "targets": [
+          {
+            "expr": "pipeline_started_total"
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "title": "Pipeline Duration (seconds)",
+        "targets": [
+          {
+            "expr": "pipeline_duration_seconds"
+          }
+        ],
+        "type": "graph"
+      },
+      {
+        "title": "Data Quality Score",
+        "targets": [
+          {
+            "expr": "data_quality_score"
+          }
+        ],
+        "type": "gauge"
+      },
+      {
+        "title": "Records Processed",
+        "targets": [
+          {
+            "expr": "records_processed"
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "title": "Failed Pipelines",
+        "targets": [
+          {
+            "expr": "pipeline_failure_total"
+          }
+        ],
+        "type": "stat"
+      }
+    ]
+  }
+}

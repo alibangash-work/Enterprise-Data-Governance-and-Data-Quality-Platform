@@ -1,0 +1,32 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'data-governance-platform'
+    environment: 'development'
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'data-governance-api'
+    static_configs:
+      - targets: ['localhost:8001']
+    metrics_path: '/api/v1/metrics/prometheus'
+
+  - job_name: 'spark-master'
+    static_configs:
+      - targets: ['spark-master:8080']
+
+  - job_name: 'airflow'
+    static_configs:
+      - targets: ['airflow-webserver:8080']
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+
+rule_files:
+  - "/etc/prometheus/rules.yml"
