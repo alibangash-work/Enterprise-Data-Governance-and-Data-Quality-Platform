@@ -271,13 +271,4 @@ GET /api/v1/metrics/prometheus
 
 ---
 
-## 🎯 Role Alignment
-
-This project strongly demonstrates capabilities required for:
-
-* **Senior Data Engineer**
-* **Data Platform Architect**
-* **Data Solutions Architect**
-
----
 
